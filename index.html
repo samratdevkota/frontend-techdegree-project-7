@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Web App Dashboard</title>
 </head>
 
-<body>
-  <header>
+<body class="grid-container">
+  <header class="header">
     <h1>YourApp</h1>
     <div></div>
     <svg></svg>
@@ -16,11 +17,13 @@
     <img src="" alt="">
     <h3></h3>
   </header>
-  <nav>
+
+  <nav class="navigation">
     <a href=""></a>
     <img src="" alt="">
   </nav>
-  <main>
+
+  <main class="main">
     <div class="main-header">
       <h2 class="headline">Dashboard</h2>
       <div class="main-header-search">
@@ -47,6 +50,7 @@
         <canvas id="traffic-chart"></canvas>
       </div>
     </section>
+
     <!-- bar graph -->
     <section class="daily">
       <h3>Daily Traffic</h3>
@@ -55,6 +59,7 @@
         <canvas id="daily-chart"></canvas>
       </div>
     </section>
+
     <div class="social-container">
       <div class="social-image">
         <!-- inline SVG not included for brevity -->
@@ -63,11 +68,16 @@
         <p>Twitter</p>
         <p>10,345</p>
       </div>
+      <div class="social-text">
+        <p>Facebook</p>
+        <p>8,739</p>
+      </div>
+      <div class="social-text">
+        <p>Google+</p>
+        <p>2,530</p>
+      </div>
     </div>
-    <!-- add two more social containers and child
-elements for other social media items -->
-    </div>
-    </div>
+
     <!-- new members widget -->
     <section class="members">
       <h3>New Members</h3>
@@ -79,6 +89,8 @@ elements for other social media items -->
         </div>
         <p>10/15/15</p>
       </div>
+    </section>
+
       <!-- messaging widget -->
       <section class="message">
         <h3>Message User</h3>
@@ -88,6 +100,7 @@ elements for other social media items -->
           <button class="button-primary" id="send">Send</button>
         </form>
       </section>
+
       <!-- local settings widget -->
       <section class="settings">
         <h3>Settings</h3>
