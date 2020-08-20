@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Web App Dashboard</title>
 </head>
 
@@ -80,6 +80,14 @@
         <canvas id="daily-chart"></canvas>
       </div>
     </section>
+    <section class="mobile">
+      <h3>Mobile Users</h3>
+      <div class="widget-container-half">
+        <!-- element bar graph will attach to -->
+        <canvas id="mobile-chart"></canvas>
+      </div>
+    </section>
+    <section class="social">
     <div class="social-container">
       <div class="social-image">
         <img src="icons/icon-twitter.svg" alt="">
@@ -109,7 +117,7 @@
         <p>2,530</p>
       </div>
     </div>
-
+  </section>
 
 
 
@@ -155,46 +163,39 @@
     <section class="activity">
       <h3>Recent activity</h3>
       <div class="members-container">
-          <img src="images/member-2.jpg" class="profile-image of member-2" />
-          <div class="members-text">
-            <p>Dale Byrd</p>
-            <p>3 hours ago</p>
-          </div>
+        <img src="images/member-2.jpg" class="profile-image of member-2" />
+        <div class="members-text">
+          <p>Dale Byrd</p>
+          <p>3 hours ago</p>
+        </div>
         <p class="arrow">&#8250;</p>
       </div>
       <div class="members-container">
-          <img src="images/member-4.jpg" class="profile-image of member-4" />
-          <div class="members-text">
-            <p>Dan Oliver</p>
-            <p>7 hours ago</p>
-          </div>
+        <img src="images/member-4.jpg" class="profile-image of member-4" />
+        <div class="members-text">
+          <p>Dan Oliver</p>
+          <p>7 hours ago</p>
+        </div>
         <p class="arrow">&#8250;</p>
       </div>
       <div class="members-container">
-          <img src="images/member-1.jpg" class="profile-image of member-1" />
-          <div class="members-text">
-            <p>Victoria Chambers</p>
-            <p>23 hours ago</p>
-          </div>
+        <img src="images/member-1.jpg" class="profile-image of member-1" />
+        <div class="members-text">
+          <p>Victoria Chambers</p>
+          <p>23 hours ago</p>
+        </div>
         <p class="arrow">&#8250;</p>
       </div>
 
       <div class="members-container">
-          <img src="images/member-3.jpg" class="profile-image of member-3" />
-          <div class="members-text">
-            <p>Dawn Wood</p>
-            <p>1 day ago</p>
-          </div>
+        <img src="images/member-3.jpg" class="profile-image of member-3" />
+        <div class="members-text">
+          <p>Dawn Wood</p>
+          <p>1 day ago</p>
+        </div>
         <p class="arrow">&#8250;</p>
       </div>
     </section>
-
-    </section>
-
-
-
-
-
 
     <!-- messaging widget -->
     <section class="message">
@@ -209,12 +210,70 @@
     <!-- local settings widget -->
     <section class="settings">
       <h3>Settings</h3>
+      <div class="toggle-wrap">
+        <label class="switch-light switch-ios" onclick="">
+            <input type="checkbox" id="emailNotification" name="email-setting">
+            Send Email Notifications
+            <span id="toggle-notification">
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+            </span>
+        </label>
+        <label class="switch-light switch-ios" onclick="">
+            <input type="checkbox" id="profileView" name="profile-setting">
+            Set Profile to Public
+            <span id="toggle-profile">
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+            </span>
+        </label>
+    </div>
       <!-- custom CSS toggle code-->
       <!-- custom CSS toggle code-->
       <select class="form-field" id="timezone">
-        <option disabled selected>Select a Timezone</option>
-        <option>Eastern</option>
-        <!-- more options -->
+        <option disabled selected>Select Timezone</option>
+        <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+        <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+        <option value="-10:00">(GMT -10:00) Hawaii</option>
+        <option value="-09:50">(GMT -9:30) Taiohae</option>
+        <option value="-09:00">(GMT -9:00) Alaska</option>
+        <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+        <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+        <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+        <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+        <option value="-04:50">(GMT -4:30) Caracas</option>
+        <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+        <option value="-03:50">(GMT -3:30) Newfoundland</option>
+        <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+        <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+        <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+        <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+        <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+        <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+        <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+        <option value="+03:50">(GMT +3:30) Tehran</option>
+        <option value="+04:00">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+        <option value="+04:50">(GMT +4:30) Kabul</option>
+        <option value="+05:00">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+        <option value="+05:50">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+        <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+        <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+        <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+        <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+        <option value="+08:00">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+        <option value="+08:75">(GMT +8:45) Eucla</option>
+        <option value="+09:00">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+        <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+        <option value="+10:00">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+        <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+        <option value="+11:00">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+        <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+        <option value="+12:00">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+        <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+        <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+        <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
       </select>
       <div class="settings-button">
         <button class="button-primary" id="save">Save</button>
