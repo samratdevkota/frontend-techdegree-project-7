@@ -1,7 +1,7 @@
 const alertBanner = document.getElementById("alert");
 // create the html for the banner
 alertBanner.innerHTML =
-`
+    `
 <div class="alert-banner">
 <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
 to complete</p>
@@ -83,34 +83,53 @@ let dailyChart = new Chart(dailyCanvas, {
     type: 'bar',
     data: dailyData,
     options: dailyOptions
-    });
+});
 
-    //doughnut char
-    const mobileCanvas = document.getElementById("mobile-chart");
-    const mobileData = {
-        labels: ["Desktop", "Tablet", "Phones"],
-        datasets: [{
+//doughnut char
+const mobileCanvas = document.getElementById("mobile-chart");
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
         label: '# of Users',
         data: [2000, 550, 500],
         borderWidth: 0,
         backgroundColor: [
-        '#7477BF',
-        '#78CF82',
-        '#51B6C8'
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
         ]
-        }]
-        };
-        const mobileOptions = {
-            legend: {
-            position: 'right',
-            labels: {
+    }]
+};
+const mobileOptions = {
+    legend: {
+        position: 'right',
+        labels: {
             boxWidth: 20,
             fontStyle: 'bold'
-            }
-            }
-            }
-            let mobileChart = new Chart(mobileCanvas, {
-                type: 'doughnut',
-                data: mobileData,
-                options: mobileOptions
-                });
+        }
+    }
+}
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+});
+
+
+/* Step 6: JS - Messaging Section */
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+send.addEventListener('click', () => {
+    // ensure user and message fields are filled out
+    if (user.value === "" && message.value === "") {
+    alert("Please fill out user and message fields before sending");
+    } else if (user.value === "" ) {
+    alert("Please fill out user field before sending");
+    } else if (message.value === "" ) {
+    alert("Please fill out message field before sending");
+    } else {
+    alert(`Message successfully sent to: ${user.value}`);
+    }
+    });
