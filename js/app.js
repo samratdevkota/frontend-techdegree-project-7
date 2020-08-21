@@ -1,17 +1,20 @@
-const alertBanner = document.getElementById("alert");
+
+/* alert banner */
+let alertBanner = document.getElementById("alert");
 // create the html for the banner
 alertBanner.innerHTML =
-    `
+`
 <div class="alert-banner">
 <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
 to complete</p>
 <p class="alert-banner-close">x</p>
 </div>
-`
-alertBanner.addEventListener('click', (e) => {
+`;
+
+alertBanner.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
-        alert.style.display = "none";
+        alertBanner.style.display = "none";
     }
 });
 
@@ -85,7 +88,8 @@ let dailyChart = new Chart(dailyCanvas, {
     options: dailyOptions
 });
 
-//doughnut char
+
+//doughnut chart
 const mobileCanvas = document.getElementById("mobile-chart");
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
@@ -114,6 +118,8 @@ let mobileChart = new Chart(mobileCanvas, {
     data: mobileData,
     options: mobileOptions
 });
+
+
 
 
 /* Step 6: JS - Messaging Section */
