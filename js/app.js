@@ -1,6 +1,16 @@
+/*Global variables */
+const alertBanner = document.getElementById("alert");
+
+const trafficCanvas = document.getElementById('traffic-chart');
+const dailyCanvas = document.getElementById("daily-chart");
+const mobileCanvas = document.getElementById("mobile-chart");
+
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
 
 /* alert banner */
-let alertBanner = document.getElementById("alert");
 // create the html for the banner
 alertBanner.innerHTML =
 `
@@ -20,7 +30,6 @@ alertBanner.addEventListener('click', e => {
 
 
 // for traffic chart
-const trafficCanvas = document.getElementById('traffic-chart');
 let trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
         "4-10", "11-17", "18-24", "25-31"],
@@ -56,9 +65,6 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 
-// for daily chart
-const dailyCanvas = document.getElementById("daily-chart");
-
 // data for daily traffic bar chart
 const dailyData = {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -90,7 +96,6 @@ let dailyChart = new Chart(dailyCanvas, {
 
 
 //doughnut chart
-const mobileCanvas = document.getElementById("mobile-chart");
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
     datasets: [{
@@ -123,10 +128,6 @@ let mobileChart = new Chart(mobileCanvas, {
 
 
 /* Step 6: JS - Messaging Section */
-const user = document.getElementById("userField");
-const message = document.getElementById("messageField");
-const send = document.getElementById("send");
-
 send.addEventListener('click', () => {
     // ensure user and message fields are filled out
     if (user.value === "" && message.value === "") {
