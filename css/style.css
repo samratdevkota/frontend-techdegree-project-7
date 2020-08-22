@@ -176,6 +176,84 @@ li.active {
     margin-left: auto;
     cursor: pointer;
 }
+
+/* Social Stats Styles */
+
+.social {
+    padding-bottom: 1rem;
+}
+
+.social h3 {
+    margin-bottom: 0px;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-container {
+    background-color: #FBFBFB;
+    border: 1px solid #D8D8D8;
+    margin: 1rem;
+    min-width: 300px;
+    height: 125px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-image {
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    background-color: #7377BF;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-right: 1rem;
+  }
+
+.social-container svg {
+    width: 40px;
+    margin: auto;
+}
+
+.social-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-hd-txt {
+    color: #7377BF;
+    margin: 1rem 0px 0px 0px;
+}
+
+.social-num-stat {
+    font-size: 2.5rem;
+    color: #666666;
+    margin: 1px 0px 1rem 0px;
+}
+
+.twitter-svg {
+    padding-top: 9px;
+    padding-left: 2px;
+}
+
+.facebook-svg {
+    padding-right: 2px;
+    padding-bottom: 2px;
+}
+
+.google-svg {
+    padding-left: 3px;
+}
+
+
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: 55px 1fr;
