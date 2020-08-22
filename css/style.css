@@ -178,23 +178,17 @@ li.active {
 }
 
 /* Social Stats Styles */
-
 .social {
-    padding-bottom: 1rem;
-}
-
-.social h3 {
-    margin-bottom: 0px;
-}
-
-.social-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 1rem;
 }
-
+.social h3 {
+    text-transform: uppercase;
+}
 .social-container {
     background-color: #FBFBFB;
     border: 1px solid #D8D8D8;
@@ -228,12 +222,12 @@ li.active {
     flex-direction: column;
 }
 
-.social-hd-txt {
+.social-media {
     color: #7377BF;
     margin: 1rem 0px 0px 0px;
 }
 
-.social-num-stat {
+.social-stat {
     font-size: 2.5rem;
     color: #666666;
     margin: 1px 0px 1rem 0px;
