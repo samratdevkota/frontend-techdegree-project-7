@@ -174,7 +174,6 @@ canvas {
 }
 
 /* Traffic Styles */
-
 .traffic-header {
     display: flex;
     justify-content: flex-end;
@@ -325,7 +324,7 @@ li.active {
     padding-left: 3px;
 }
 
-* Members Styles */
+/* Members Styles */
 
 .members,
 .activity {

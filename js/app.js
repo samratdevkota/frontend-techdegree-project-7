@@ -30,14 +30,30 @@ alertBanner.addEventListener('click', e => {
 
 
 // for traffic chart
+const chartData = [
+    {"points": [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500, 1750],
+    "labels": ["12-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", "9-10", "10-11", "11-12"]},
+    {"points": [650, 950, 2150, 650, 2350, 500, 1700],
+    "labels": ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]},
+    {"points": [500, 850, 2050, 250, 1500, 300, 2100, 1000],
+    "labels": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"]},
+    {"points": [200, 1450, 750, 2250, 500, 800, 2250, 950, 1650, 800, 1700, 750],
+    "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]},
+];
+
+// data for traffic line chart
 let trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
-        "4-10", "11-17", "18-24", "25-31"],
+    labels: chartData[0].labels,
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
-            2500],
+        data: chartData[0].points,
         backgroundColor: 'rgba(116, 119, 191, .3)',
-        borderWidth: 1,
+        borderColor: '#A9ACE5',
+        borderWidth: 2,
+        lineTension: 0,
+        pointBackgroundColor: '#FFFFFF',
+        pointBorderColor: '#7477BF',
+        pointBorderWidth: 2,
+        pointRadius: 4
     }]
 };
 
@@ -64,6 +80,28 @@ let trafficChart = new Chart(trafficCanvas, {
     options: trafficOptions
 });
 
+function addData(chart, label, data) {
+    chart.data.labels = [];
+    chart.data.datasets.data = [];
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data = data;
+    });
+    label.forEach((lab) => {
+        chart.data.labels.push(lab);
+    });
+    chart.update();
+}
+
+const listItems = document.querySelectorAll(".traffic-nav li");
+
+for (let i = 0; i < listItems.length; i += 1) {
+    listItems[i].addEventListener('click', function (event) {
+        const active = document.querySelector(".active");
+        active.className = event.target.className.replace(" active", "");
+        this.className += " active";
+        addData(trafficChart, chartData[i].labels, chartData[i].points);
+    });
+}
 
 // data for daily traffic bar chart
 const dailyData = {
