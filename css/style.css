@@ -2,8 +2,6 @@
 * {
     box-sizing: border-box;
     list-style-type: none;
-    outline: none;
-    border: none;
 }
 
 html {
@@ -31,7 +29,7 @@ body {
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
-    padding: 2vw 4vw;
+    padding: .5rem 1rem;
     color: #ffffff;
 }
 
@@ -64,17 +62,33 @@ header h1 sup {
     width: 30px;
     border-radius: 50%;
 }
+.line {
+    border-left: 1px solid #FFFFFF;
+    padding-left: 10px;
+}
 .username {
     font-size: 0.75rem;
     margin-left: 10px;
 }
+
+/* Nav Styles */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 .navigation {
     grid-area: navigation;
     background: #4d4c72;
-	color: grey;
 	width: 100%;
 	padding: 10px;
-	top: 10%;
 }
 
 nav ul {
@@ -115,6 +129,50 @@ nav a:active {
     margin: 0;
     margin-right: auto;
 }
+
+.headline, h3 {
+    color: #676666;
+}
+
+.traffic,
+.daily,
+.mobile,
+.social,
+.members,
+.activity,
+.message,
+.settings {
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.headline,
+.traffic,
+.daily,
+.mobile,
+.social {
+    padding-left: 1rem;
+}
+
+.traffic,
+.daily,
+.mobile,
+.social,
+.activity,
+.settings {
+    padding-right: 1rem;
+}
+.traffic,
+.daily {
+    padding-bottom: 1rem;
+}
+
+.mobile {
+    padding-bottom: 2rem;
+}
+canvas {
+    max-width: 100%;
+}
+
 /* Traffic Styles */
 
 .traffic-header {
@@ -171,6 +229,24 @@ li.active {
     outline: none;
 }
 
+/* Alert Styles */
+
+.alert-banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #7377BF;
+    color: #FFFFFF;
+    border-radius: 10px;
+    height: 50px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
 .alert-banner-close {
     font-weight: normal;
     margin-left: auto;
@@ -179,12 +255,14 @@ li.active {
 
 /* Social Stats Styles */
 .social {
+    padding-bottom: 1rem;
+}
+.social-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-bottom: 1rem;
 }
 .social h3 {
     text-transform: uppercase;
@@ -349,7 +427,22 @@ li.active {
 .settings {
     padding: 0rem 1rem 2rem 1rem;
 }
+.toggle-wrap {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.switch-light {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: center;
+}
 
+#timezone {
+    padding-bottom: 10px;
+}
 .settings-button {
     display: flex;
     flex-direction: row;
@@ -385,6 +478,14 @@ li.active {
     .main {
         grid-template-columns: 1fr ;
     }
+    .main-header {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+    .alert {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
     .traffic, .social {
         grid-column: 1 / span 2;
     }
@@ -402,5 +503,79 @@ li.active {
     }
     .widget-container-half {
         width: 45vw;
+    }
+
+    header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .username {
+        font-size: 1rem;
+        margin: 0px 0px 0px 10px;
+    }
+
+    nav {
+        width: 85px;
+    }
+
+    .mobile {
+        border-left: 1px solid #D8D8D8;
+    }
+
+    .social-container {
+        margin: 1rem 1rem 2rem 1rem;
+    }
+
+    .activity {
+        border-left: 1px solid #D8D8D8;
+    }
+
+    .settings {
+        border-left: 1px solid #D8D8D8;
+    }
+    .widget-container-mobile {
+        width: 95%;
+    }
+
+    /* Image Styles */
+
+    .bell {
+        width: 25px;
+    }
+
+    .profile-image {
+        width: 40px;
+    }
+
+    .navigation img {
+        width: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Flexbox Styles */
+
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .social-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Message Styles */
+
+    .message {
+        padding: 0rem 1rem 75px 1rem;
+    }
+
+    /* Settings Styles */
+
+    .settings {
+        padding: 0rem 1rem 75px 1rem;
     }
 }
