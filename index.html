@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/toggle-switch.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Web App Dashboard</title>
 </head>
@@ -251,26 +250,21 @@
     <!-- local settings widget -->
     <section class="settings">
       <h3>Settings</h3>
-      <div class="toggle-wrap">
-        <label class="switch-light switch-ios" onclick="">
-          <input type="checkbox" id="emailNotification" name="email-setting">
-          Send Email Notifications
-          <span id="toggle-notification">
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
+      <div class="large-3 notif-email-txt">
+        <strong>Email Notifications</strong>
+        <label class="switch">
+            <input id="email-toggle" type="checkbox">
+            <span class="slider round"></span>
         </label>
-        <label class="switch-light switch-ios" onclick="">
-          <input type="checkbox" id="profileView" name="profile-setting">
-          Set Profile to Public
-          <span id="toggle-profile">
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
+    </div>
+    <!-- custom CSS toggle code-->
+    <div class="large-3 send-profile-txt">
+        <strong>Set Profile to Public</strong>
+        <label class="switch">
+            <input id="profile-toggle" type="checkbox">
+            <span class="slider round"></span>
         </label>
-      </div>
+    </div>
 
       <select class="form-field" id="timezone">
         <option disabled selected>Select Timezone</option>
